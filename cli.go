@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"context"
+	"fmt"
 )
 
 func main() {
@@ -20,11 +21,11 @@ func main() {
 	srv.Init()
 
 	client := pb.NewUserServiceClient("go.micro.srv.user", microclient.DefaultClient)
-
-	name := "Ewan Valentine"
-	email := "ewan.valentine89@gmail.com"
-	password := "test123"
-	company := "BBC"
+	fmt.Println(client)
+	name := "hector"
+	email := "hector@email.com"
+	password := "password"
+	company := "company"
 
 	r, err := client.Create(context.TODO(), &pb.User{
 		Name:     name,
